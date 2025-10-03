@@ -12,6 +12,86 @@ console.log('Target Date (UTC):', TARGET_DATE.toISOString());
 console.log('Target Date (Local):', TARGET_DATE.toLocaleString());
 
 /**
+ * Handle page load animation
+ */
+function handlePageLoad() {
+  window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    if (!loadingScreen) return;
+    
+    // Fade out the loading screen
+    loadingScreen.style.transition = 'opacity 0.5s ease-out';
+    loadingScreen.style.opacity = '0';
+    
+    // Remove from DOM after animation
+    setTimeout(() => {
+      loadingScreen.remove();
+    }, 500);
+  });
+}
+
+/**
+ * Add parallax effect to portal
+ */
+function initParallaxEffect() {
+  const portal = document.querySelector('.portal-container');
+  if (!portal) return;
+
+  document.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    
+    const moveX = (mouseX - 0.5) * 20;
+    const moveY = (mouseY - 0.5) * 20;
+    
+    portal.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+}
+
+/**
+ * Optimize animation performance
+ */
+function optimizeAnimations() {
+  // Use will-change for animated elements
+  const animatedElements = document.querySelectorAll('.portal-ring-outer, .portal-ring-middle, .portal-glow');
+  
+  animatedElements.forEach(element => {
+    element.style.willChange = 'transform';
+  });
+  
+  // Remove will-change after animation starts
+  setTimeout(() => {
+    animatedElements.forEach(element => {
+      element.style.willChange = 'auto';
+    });
+  }, 1000);
+}
+
+/**
+ * Error handling and fallback
+ */
+function initErrorHandling() {
+  // Catch any unhandled errors
+  window.addEventListener('error', (e) => {
+    console.error('Error occurred:', e.error);
+    
+    // Show user-friendly error message
+    const countdown = document.getElementById('countdown');
+    if (countdown) {
+      countdown.innerHTML = `
+        <div class="text-center text-red-400">
+          <div class="text-2xl mb-2">⚠️</div>
+          <div>發生錯誤,請重新整理頁面</div>
+          <div class="text-sm mt-2">Error occurred, please refresh the page</div>
+        </div>
+      `;
+    }
+  });
+}
+
+
+/**
  * Calculate the time difference between now and target date
  * @returns {Object} Object containing days, hours, minutes, seconds
  */
@@ -134,8 +214,16 @@ function testTimezone() {
   console.groupEnd();
 }
 
-// Start countdown when DOM is ready
-document.addEventListener('DOMContentLoaded', initCountdown);
+// Initialize all features when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  initCountdown();
+  initParallaxEffect();
+  optimizeAnimations();
+});
+
+// Initialize error handling and page load animation
+initErrorHandling();
+handlePageLoad();
 
 // Uncomment for testing
 // testTimezone();
