@@ -1,85 +1,148 @@
-# website-countdown
+# 時空門倒數計時 | Time Portal Countdown
 
-時空門倒數計時 - 倒數至 2025 年 12 月 21 日 20:00 (UTC+8)
+一個使用純 JavaScript、HTML 和 Tailwind CSS 建立的倒數計時網站,倒數至 2025 年 12 月 21 日晚上 8 點 (UTC+8)。
 
-## 專案簡介
+## 🌟 特色功能
 
-這是一個靜態網站專案,展示一個時空門倒數計時器,倒數至 2025/12/21 20:00 (UTC+8 時區)。
+- 🎨 科幻風格的時空門視覺設計
+- ⏱️ 精確的倒數計時器,支援跨時區顯示
+- 📱 完全響應式設計,支援所有裝置
+- ♿ 完整的無障礙功能支援
+- 🎭 流暢的動畫效果
+- 🚀 高效能優化
+- 🌐 跨瀏覽器相容
 
-本專案使用以下技術:
-- HTML5
-- JavaScript (純 JavaScript, 無框架)
-- Tailwind CSS v3
+## 🛠️ 技術堆疊
 
-## 開發環境設置
+- **HTML5**: 語意化標籤
+- **Tailwind CSS**: 實用優先的 CSS 框架
+- **Vanilla JavaScript**: 純 JavaScript,無需框架
+- **CSS Animations**: 純 CSS 動畫效果
 
-### 前置需求
+## 📋 系統需求
 
-- Node.js (建議 v16 或更新版本)
-- npm
+- 現代瀏覽器 (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- 啟用 JavaScript
 
-### 安裝步驟
+## 🚀 快速開始
 
-1. Clone 專案
-```bash
-git clone https://github.com/jim60105/website-countdown.git
-cd website-countdown
-```
+### 使用 CDN (開發/展示)
 
-2. 安裝依賴
+直接開啟 `index.html` 檔案即可,無需建置步驟。
+
+### 使用 Tailwind CLI (生產環境)
+
+1. 安裝相依套件:
 ```bash
 npm install
 ```
 
-3. 建立 CSS (首次執行或修改 CSS 後執行)
+2. 建置 CSS:
 ```bash
 npm run build:css
 ```
 
-### 開發指令
-
-- **建立 CSS**: `npm run build:css`
-  - 編譯 Tailwind CSS，將 `src/css/input.css` 輸出至 `dist/output.css`
-  
-- **開發模式 (自動監控 CSS 變更)**: `npm run watch:css`
-  - 啟動 Tailwind CSS 監控模式，檔案變更時自動重新編譯
-
-### 如何執行
-
-1. 建立 CSS (如果尚未建立)
+3. 開發模式 (watch mode):
 ```bash
-npm run build:css
+npm run dev
 ```
 
-2. 在瀏覽器中開啟 `index.html`
-   - 可以直接開啟檔案
-   - 或使用本地伺服器 (例如 VS Code 的 Live Server 擴充功能)
+4. 開啟 `index.html` 在瀏覽器中查看。
 
-## 專案結構
+## 📁 專案結構
 
 ```
 website-countdown/
-├── index.html              # 主頁面
+├── index.html              # 主要 HTML 檔案
 ├── src/
 │   ├── js/
-│   │   └── main.js        # 主要 JavaScript 邏輯
+│   │   └── main.js         # JavaScript 邏輯
 │   ├── css/
-│   │   └── input.css      # Tailwind CSS 輸入檔案
-│   └── assets/            # 資源檔案 (圖片等)
+│   │   └── input.css       # Tailwind CSS 輸入
+│   └── assets/             # 圖片資源
 ├── dist/
-│   └── output.css         # Tailwind CSS 編譯輸出
+│   └── output.css          # 編譯後的 CSS
+├── package.json            # NPM 套件設定
+├── tailwind.config.js      # Tailwind 設定
 ├── .gitignore
-├── package.json
-├── tailwind.config.js     # Tailwind CSS 配置
+├── .editorconfig
+├── LICENSE
 ├── README.md
-└── LICENSE                # GNU Affero General Public License v3.0
+├── TESTING.md              # 測試檢查清單
+└── CHANGELOG.md            # 版本更新日誌
 ```
 
-## 授權條款
+## 🎯 目標時間
 
-本專案採用 [GNU Affero General Public License v3.0](LICENSE) 授權。
+**2025 年 12 月 21 日 20:00:00 (UTC+8 / 台北時區)**
 
-## 參考資源
+無論您在世界的哪個角落,倒數計時都會正確顯示到這個特定的時間點。
 
-- [Tailwind CSS 官方文件](https://tailwindcss.com/docs)
-- [MDN Web Docs](https://developer.mozilla.org/)
+## 🌐 部署
+
+### GitHub Pages
+
+1. 推送程式碼到 GitHub repository
+2. 前往 Settings > Pages
+3. 選擇 branch 為 `master` 或 `main`
+4. 點擊 Save
+
+### Cloudflare Pages
+
+1. 連接 GitHub repository
+2. 建置設定:
+   - Build command: `npm run build:css`
+   - Build output directory: `/`
+3. 部署
+
+### Netlify
+
+1. 連接 GitHub repository
+2. 建置設定:
+   - Build command: `npm run build:css`
+   - Publish directory: `/`
+3. 部署
+
+## 🧪 測試
+
+### 本地測試
+
+```bash
+# 使用 Python 啟動本地伺服器
+python -m http.server 8000
+
+# 或使用 Node.js
+npx http-server
+
+# 然後在瀏覽器開啟 http://localhost:8000
+```
+
+### 效能測試
+
+使用 Lighthouse 進行效能審查:
+1. 開啟 Chrome DevTools
+2. 切換到 Lighthouse 標籤
+3. 執行審查
+
+更多測試項目請參考 [TESTING.md](TESTING.md)
+
+## 📝 授權
+
+本專案採用 [GNU Affero General Public License v3.0](LICENSE)。
+
+## 👤 作者
+
+jim60105
+
+## 🤝 貢獻
+
+歡迎提交 Issue 和 Pull Request!
+
+## 📮 聯絡方式
+
+- GitHub: [@jim60105](https://github.com/jim60105)
+- Email: jim60105@gmail.com
+
+---
+
+Made with ❤️ and ⚡ by jim60105

@@ -7,10 +7,6 @@
 // UTC+8 20:00 = UTC 12:00
 const TARGET_DATE = new Date('2025-12-21T12:00:00.000Z');
 
-// Verify the target date
-console.log('Target Date (UTC):', TARGET_DATE.toISOString());
-console.log('Target Date (Local):', TARGET_DATE.toLocaleString());
-
 /**
  * Handle page load animation
  */
@@ -189,29 +185,6 @@ function initCountdown() {
   
   // Update every second
   setInterval(updateCountdownDisplay, 1000);
-  
-  console.log('Countdown initialized');
-  console.log('Target:', TARGET_DATE.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }));
-}
-
-/**
- * Test timezone handling
- * This function should be removed in production
- */
-function testTimezone() {
-  console.group('Timezone Test');
-  
-  // Test different timezone representations
-  const testDate = new Date('2025-12-21T12:00:00.000Z');
-  
-  console.log('UTC Time:', testDate.toISOString());
-  console.log('Taipei (UTC+8):', testDate.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }));
-  console.log('New York (UTC-5/-4):', testDate.toLocaleString('en-US', { timeZone: 'America/New_York' }));
-  console.log('London (UTC+0/+1):', testDate.toLocaleString('en-GB', { timeZone: 'Europe/London' }));
-  console.log('Tokyo (UTC+9):', testDate.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }));
-  console.log('User Local:', testDate.toLocaleString());
-  
-  console.groupEnd();
 }
 
 // Initialize all features when DOM is ready
@@ -224,6 +197,3 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize error handling and page load animation
 initErrorHandling();
 handlePageLoad();
-
-// Uncomment for testing
-// testTimezone();

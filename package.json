@@ -1,15 +1,19 @@
 {
   "name": "website-countdown",
   "version": "1.0.0",
-  "description": "時空門倒數計時 - Time Portal Countdown to 2025/12/21 20:00 (UTC+8)",
-  "main": "index.js",
+  "description": "A countdown timer to the time portal opening on 2025-12-21 20:00 UTC+8",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/output.css",
-    "watch:css": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify",
+    "serve": "python -m http.server 8000"
   },
-  "keywords": ["countdown", "timer", "tailwindcss"],
-  "author": "",
+  "keywords": [
+    "countdown",
+    "timer",
+    "tailwindcss",
+    "vanilla-js"
+  ],
+  "author": "jim60105",
   "license": "AGPL-3.0",
   "devDependencies": {
     "tailwindcss": "^3.4.18"
