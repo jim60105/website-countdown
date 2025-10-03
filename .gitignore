@@ -83,7 +83,7 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# dist - commented out because we need the compiled CSS for static site deployment
 
 # Gatsby files
 .cache/

@@ -7,13 +7,35 @@
   <title>時空門倒數計時</title>
   <link rel="stylesheet" href="./dist/output.css">
 </head>
-<body>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen overflow-hidden">
   <header>
     <!-- Header content will be added in future iterations -->
   </header>
   
-  <main>
-    <!-- Main countdown content will be added in future iterations -->
+  <main class="relative z-10 flex items-center justify-center min-h-screen">
+    <div class="portal-container">
+      <!-- 外圈旋轉環 -->
+      <div class="portal-ring-outer"></div>
+      
+      <!-- 中圈旋轉環 -->
+      <div class="portal-ring-middle"></div>
+      
+      <!-- 內圈光暈 -->
+      <div class="portal-glow"></div>
+      
+      <!-- 時空門中心 (倒數計時顯示區) -->
+      <div class="portal-center">
+        <div class="countdown-display">
+          <!-- 倒數計時將顯示在這裡 -->
+          <div id="countdown" class="text-6xl font-bold text-white">
+            載入中...
+          </div>
+          <div class="text-xl text-gray-300 mt-4">
+            距離時空門開啟還有
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   
   <footer>
