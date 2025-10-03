@@ -562,6 +562,14 @@ video {
   z-index: 10;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -580,6 +588,12 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .overflow-hidden {
@@ -605,9 +619,23 @@ video {
   --tw-gradient-to: #111827 var(--tw-gradient-to-position);
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl {
@@ -622,6 +650,21 @@ video {
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity, 1));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+
+.text-purple-300 {
+  --tw-text-opacity: 1;
+  color: rgb(216 180 254 / var(--tw-text-opacity, 1));
+}
+
+.text-purple-400 {
+  --tw-text-opacity: 1;
+  color: rgb(192 132 252 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
@@ -734,6 +777,14 @@ video {
   #countdown {
     font-size: 3rem;
   }
+
+  .countdown-unit .text-6xl {
+    font-size: 3rem;
+  }
+
+  .countdown-unit .text-sm {
+    font-size: 0.75rem;
+  }
 }
 
 /* 手機裝置 */
@@ -745,6 +796,18 @@ video {
   }
 
   #countdown {
+    font-size: 2rem;
+  }
+
+  .countdown-unit .text-6xl {
+    font-size: 2rem;
+  }
+
+  .countdown-unit {
+    margin: 0 0.5rem;
+  }
+
+  #countdown .text-6xl.font-bold.text-purple-300 {
     font-size: 2rem;
   }
 }
