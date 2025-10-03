@@ -1,3 +1,110 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Portal Container */
+.portal-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 外圈旋轉環 */
+.portal-ring-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  animation: rotate-clockwise 20s linear infinite;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  will-change: transform;
+}
+
+/* 中圈旋轉環 */
+.portal-ring-middle {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border: 2px solid rgba(167, 139, 250, 0.5);
+  border-radius: 50%;
+  animation: rotate-counterclockwise 15s linear infinite;
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.6);
+  will-change: transform;
+}
+
+/* 內圈光暈 */
+.portal-glow {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  will-change: opacity, transform;
+}
+
+/* 時空門中心 */
+.portal-center {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* 動畫定義 */
+@keyframes rotate-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-counterclockwise {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+/* 響應式設計調整 */
+/* 平板裝置 */
+@media (max-width: 768px) {
+  .portal-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  #countdown {
+    font-size: 3rem;
+  }
+}
+
+/* 手機裝置 */
+@media (max-width: 480px) {
+  .portal-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  #countdown {
+    font-size: 2rem;
+  }
+}
+
+/* 尊重使用者的動畫偏好設定 */
+@media (prefers-reduced-motion: reduce) {
+  .portal-ring-outer,
+  .portal-ring-middle {
+    animation: none;
+  }
+  
+  .portal-glow {
+    animation: none;
+    opacity: 0.7;
+  }
+}
