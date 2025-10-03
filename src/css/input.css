@@ -82,6 +82,14 @@
   #countdown {
     font-size: 3rem;
   }
+  
+  .countdown-unit .text-6xl {
+    font-size: 3rem;
+  }
+  
+  .countdown-unit .text-sm {
+    font-size: 0.75rem;
+  }
 }
 
 /* 手機裝置 */
@@ -92,6 +100,18 @@
   }
   
   #countdown {
+    font-size: 2rem;
+  }
+  
+  .countdown-unit .text-6xl {
+    font-size: 2rem;
+  }
+  
+  .countdown-unit {
+    margin: 0 0.5rem;
+  }
+  
+  #countdown .text-6xl.font-bold.text-purple-300 {
     font-size: 2rem;
   }
 }
